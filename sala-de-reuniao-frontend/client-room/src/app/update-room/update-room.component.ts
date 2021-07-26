@@ -41,18 +41,34 @@ export class UpdateRoomComponent implements OnInit {
 
   updateRoom() {
     this.roomService.updateRoom(this.id, this.room)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.room = new Room();
-    this.gotoList();
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        }, 
+        error => console.log(error));
+    //this.room = new Room();
+    //this.gotoList();
   }
 
+  deleteRoom(id: number) {
+    this.roomService.deleteRoom(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
+  }
 
   gotoList() {
-    this.reloadData();
     this.router.navigate(['/room']);
   }
 
   reloadData() {
     this.rooms = this.roomService.getRoomsList();
+    this.gotoList();
+
   }
+  
 }

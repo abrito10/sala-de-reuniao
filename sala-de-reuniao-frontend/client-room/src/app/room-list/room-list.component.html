@@ -1,16 +1,16 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2>Room List</h2>
+      <h2>Lista de salas</h2>
     </div>
     <div class="panel-body">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>name</th>
-            <th>date</th>
-            <th>startHour</th>
-            <th>endHour</th>
-            <th>Actions</th>
+            <th>Nome</th>
+            <th>Data de Reuniao</th>
+            <th>Hora de Inicio</th>
+            <th>Hora de Término</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -19,10 +19,12 @@
             <td>{{room.date}}</td>
             <td>{{room.startHour}}</td>
             <td>{{room.endHour}}</td>
-            <td><button (click)="deleteRoom(room.id)" class="btn btn-danger">Delete</button>
-              <button (click)="updateRoom(room.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
-                <button (click)="roomDetails(room.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            <td>
+              <button (click)="deleteRoom(room.id)" class="btn btn-danger">Apagar</button>
+              <button (click)="updateRoom(room.id)" class="btn btn-info" style="margin-left: 10px">Alterar</button>
+              <button (click)="roomDetails(room.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
             </td>
+            
           </tr>
         </tbody>
       </table>
